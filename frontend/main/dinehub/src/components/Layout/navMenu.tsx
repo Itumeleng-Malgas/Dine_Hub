@@ -41,10 +41,9 @@ export function NavMenu() {
           <User size={15} className="mr-2" />
           <span>Dine in</span>
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer flex gap-2
-      items-center" onClick={() => router.push('/Register-Restarants')}>
+        <DropdownMenuItem className="cursor-pointer flex gap-2 items-center">
           <PlusCircle size={15} className="mr-2" />
-          <span>Register Restaurants</span>
+          <a href="http://localhost:8000/register" target="_blank">Register Restaurants</a>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
