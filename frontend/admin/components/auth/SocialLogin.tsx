@@ -3,11 +3,14 @@ import React from 'react'
 import { FaApple } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import { TfiMicrosoft } from 'react-icons/tfi'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const SocialLogin = () => {
   return (
     <div className="flex">
-        <Button  className="flex-1 mr-1">
+        <Button onClick={async () => await signIn('google', {
+            callbackUrl: 'http://localhost:3000/admin'
+        })}  className="flex-1 mr-1">
             <div className="flex justify-center items-center">
                 <FcGoogle size={18}/><span className="ml-1">Google</span>
             </div>
