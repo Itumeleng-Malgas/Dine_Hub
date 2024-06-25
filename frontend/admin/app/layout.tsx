@@ -5,6 +5,7 @@ import "./globals.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
 import theme from '@/theme/themeConfig';
+import SessionWrapper from "@/components/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ConfigProvider theme={theme}>
-      <html lang="en">
-        <body className={inter.className}>
-          <AntdRegistry>
-            {children}
-          </AntdRegistry>
-        </body>
-      </html>
-    </ConfigProvider>
+    <SessionWrapper>
+      <ConfigProvider theme={theme}>
+        <html lang="en">
+          <body className={inter.className}>
+            <AntdRegistry>
+              {children}
+            </AntdRegistry>
+          </body>
+        </html>
+      </ConfigProvider>
+    </SessionWrapper>
   );
 }
