@@ -19,11 +19,12 @@ const handler = NextAuth({
                 throw new Error('No profile')
             }
             return true
-        }
+        },
     },
     secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: "/login",
+        error: "/auth/error"
     },
 })
 
