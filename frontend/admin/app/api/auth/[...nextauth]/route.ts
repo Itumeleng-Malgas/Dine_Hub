@@ -13,14 +13,6 @@ const handler = NextAuth({
           clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
         }),
     ],
-    callbacks: {
-        async signIn({ account, profile}) {
-            if (!profile?.email) {
-                throw new Error('No profile')
-            }
-            return true
-        },
-    },
     secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: "/login",

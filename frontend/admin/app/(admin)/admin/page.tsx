@@ -1,13 +1,7 @@
-"use client"
-import { Button } from 'antd'
-import { signOut } from 'next-auth/react'
-import React from 'react'
+import { redirect } from 'next/navigation'
 
-const AdminPage = () => {
-  return (
-    <><div>AdminPage</div>
-    <Button danger type='primary' onClick={async () => await signOut()}>SignOut</Button></>
-  )
+const Admin = () => {
+  return ( redirect ('/admin/dashboard'))
 }
 
-export default AdminPage
+export default Admin
